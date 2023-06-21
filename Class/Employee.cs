@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace Class
 {
-    internal class Employee
+    public class Employee
     {
+        private String no;
+        private String name;
+        private String email;
+
+        public Employee(string no, string name, string email)
+        {
+            this.no = no;
+            this.name = name;
+            this.email = email;
+        }
     }
 }

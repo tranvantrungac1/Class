@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace Class
 {
-    internal class BaseManager
+    public class BaseManager
     {
+        public BaseManager()
+        {
+
+        }
+        public void AddNew()
+        {
+            Console.WriteLine("Add New");
+        }
+        public void Remove()
+        {
+            Console.WriteLine("Remove");
+        }
+        public void Delete()
+        {
+            Console.WriteLine("Delete");
+        }
     }
 }
