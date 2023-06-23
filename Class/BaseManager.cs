@@ -8,21 +8,36 @@ namespace Class
 {
     public class BaseManager
     {
+        
+        public static String VERSION = "1.0.0";
+        private String name;
+        public BaseManager(string name)
+        {
+            Console.WriteLine("Init BaseManager with name");
+            this.name = name;
+        }
+
         public BaseManager()
         {
-
+            Console.WriteLine("Init BaseManager");
+            this.name = "Unknow";
         }
-        public void AddNew()
+
+        virtual public void AddNew()
         {
             Console.WriteLine("Add New");
         }
-        public void Remove()
+        virtual public void Update()
         {
             Console.WriteLine("Remove");
         }
-        public void Delete()
+        virtual public void Delete()
         {
             Console.WriteLine("Delete");
+        }
+        virtual public void Find()
+        {
+            Console.WriteLine("Find");
         }
     }
 }
