@@ -45,7 +45,7 @@ namespace Class
             }
             
             //nhap lieu phan tu moi
-            Console.Write("Nhap No: ");
+            Console.Write("Nhap Number: ");
             String no = Console.ReadLine();
             Console.Write("Nhap Ten: ");            
             string name=Console.ReadLine();
