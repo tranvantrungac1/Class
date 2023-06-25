@@ -15,9 +15,9 @@ namespace Class
         {
             //this.employees = new Employee[MAX];
             this.employees = new Employee[]{
-                new Employee("E001", "hoangnm", "hoangnm@gmail.com"),
-                new Employee("E002", "namph", "namph@gmail.com"),
-                new Employee("E003", "minhnv", "minhnv @gmail.com"),
+                new Employee("E001", "hoangnm", "hoangnm@gmail.com", true, "123"),
+                new Employee("E002", "namph", "namph@gmail.com", false, "123"),
+                new Employee("E003", "minhnv", "minhnv @gmail.com", true, "123"),
             };
         }
 
@@ -33,6 +33,29 @@ namespace Class
 
         //    base.addnew();
         //}
+        public override int Login()
+        {
+            Console.Write("Nhap Email:");
+            string email = Console.ReadLine();
+            Console.Write("Nhap Password:");
+            string password = Console.ReadLine();
+            int result;
+            foreach (Employee emp in employees)
+            {
+                if (emp.GetMail().Equals(email) & emp.GetPassword().Equals(password))
+                {
+                    if (emp.GetIsManager().Equals(true))
+                    {
+                        Console.WriteLine("Dang nhap thanh cong. Ban la Manager");
+                        return 1; 
+                    }
+                    Console.WriteLine("Dang nhap thanh cong. Ban la User");
+                    return 2;
+                }
+            }
+            Console.WriteLine("Dang nhap khong thanh cong");
+            return 0;
+        }
         public override void AddNew()
         {
             //khai bao 1 mang trung gian co so phan tu lon hon mang goc la 1
@@ -43,17 +66,22 @@ namespace Class
             {
                 newArray[i]= this.employees[i];
             }
-            
+
             //nhap lieu phan tu moi
             Console.Write("Nhap Number: ");
             String no = Console.ReadLine();
             Console.Write("Nhap Ten: ");            
-            string name=Console.ReadLine();
+            String name=Console.ReadLine();
             Console.Write("Nhap Email: ");
             String email=Console.ReadLine();
-            
+            Console.Write("La quan ly y/n:");
+            Boolean isManager = false;
+            if (Console.ReadLine().ToUpper() == "Y") { isManager = true; }
+            Console.Write("Nhap Password:");
+            String password=Console.ReadLine();
+
             //gan gia tri cho phan tu moi
-            newArray[newArray.Length-1] = new Employee(no, name, email);
+            newArray[newArray.Length-1] = new Employee(no, name, email,isManager, password );
             
             //bien mang cu thanh mang moi
             employees = newArray;

@@ -11,15 +11,28 @@ namespace Class
         private String no;
         private String name;
         private String email;
+        private Boolean isManager;
+        private String password;
+
 
         public Employee()
         {
         }
-        public Employee(string no, string name, string email)
+        public Employee(string no, string name, string email, bool  isManager, string password)
         {
             this.no = no;
             this.name = name;
             this.email = email;
+            this.isManager = isManager;
+            this.password = password;
+        }
+        public Boolean GetIsManager()
+        {
+            return this.isManager;
+        }
+        public String GetPassword()
+        {
+            return this.password;
         }
         public String GetName()
         {

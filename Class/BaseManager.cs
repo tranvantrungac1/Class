@@ -13,14 +13,14 @@ namespace Class
         private String name;
         public BaseManager(string name)
         {
-            Console.WriteLine("Init BaseManager with name");
-            this.name = name;
+            //console.writeline("init basemanager with name");
+            //this.name = name;
         }
 
         public BaseManager()
         {
-            Console.WriteLine("Init BaseManager");
-            this.name = "Unknow";
+            //Console.WriteLine("Init BaseManager");
+            //this.name = "Unknow";
         }
 
         virtual public void AddNew()
@@ -38,6 +38,10 @@ namespace Class
         virtual public void Find()
         {
             Console.WriteLine("Find");
+        }
+        virtual public int Login()
+        {
+            return 0;
         }
     }
 }
