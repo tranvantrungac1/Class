@@ -43,5 +43,13 @@ namespace Class
         {
             return 0;
         }
+        virtual public void Import()
+        {
+            Console.WriteLine("Import");
+        }
+        virtual public void Export()
+        {
+            Console.WriteLine("Export");
+        }
     }
 }

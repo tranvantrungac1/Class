@@ -33,6 +33,45 @@ namespace Class
 
         //    base.addnew();
         //}
+
+
+        public override void Import()
+        {
+            Console.WriteLine("Hay nhap duong dan toi file can Import");
+            String path = Console.ReadLine();
+            StreamReader reader = new StreamReader(path);
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+        public override void Export()
+        {
+            StreamWriter streamWriter = new StreamWriter("C:\\Users\\ADMIN\\.TRAN VAN TRUNG\\data.csv", true, System.Text.Encoding.UTF8);
+            try
+            {
+                foreach (Employee e in employees)
+                {
+                    streamWriter.WriteLine(e);
+                    streamWriter.Flush();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                streamWriter.Close();
+            }
+        }
+
         public override int Login()
         {
             Console.Write("Nhap Email:");
