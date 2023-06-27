@@ -43,7 +43,7 @@ namespace Class
             
             try
             {
-                do 
+                do
                 {
                     string line = reader.ReadLine();
 
@@ -76,12 +76,16 @@ namespace Class
                     //bien mang cu thanh mang moi
                     employees = newArray;
                 }
-                while (reader.ReadLine()!=null);
+                while (line!=null);
             }
             catch (Exception)
             {
 
                 throw;
+            }
+            finally
+            {
+                reader.Close();
             }
 
         }
