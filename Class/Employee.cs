@@ -60,7 +60,7 @@ namespace Class
         }
         public override string? ToString()
         {
-            return no + ", " + name + ", " + email;
+            return no + "," + name + "," + email+ "," + isManager + "," + password;
         }
     } 
 }

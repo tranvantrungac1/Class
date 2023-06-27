@@ -40,9 +40,43 @@ namespace Class
             Console.WriteLine("Hay nhap duong dan toi file can Import");
             String path = Console.ReadLine();
             StreamReader reader = new StreamReader(path);
+            
             try
             {
+                do 
+                {
+                    string line = reader.ReadLine();
 
+                    //tách chuỗi gán vào mảng 
+                    string[] strings = line.Split(',');
+
+                    //
+                    Employee[] newArray = new Employee[this.employees.Length + 1];
+                    for (int i = 0; i < this.employees.Length; i++)
+                    {
+                        newArray[i] = this.employees[i];
+                    }
+                    String no = strings[0];
+                    String name = strings[1];
+                    String email = strings[2];
+                    Boolean isManager;
+                    if (strings[3] == "true")
+                    {
+                        isManager = true;
+                    }
+                    else
+                    {
+                        isManager = false;
+                    }
+                    String password = strings[4];
+
+                    //gan gia tri cho phan tu moi
+                    newArray[newArray.Length - 1] = new Employee(no, name, email, isManager, password);
+
+                    //bien mang cu thanh mang moi
+                    employees = newArray;
+                }
+                while (reader.ReadLine()!=null);
             }
             catch (Exception)
             {
